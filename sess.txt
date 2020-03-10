@@ -1,0 +1,6 @@
+If session not working 
+=======================
+
+manage.py migrate --run-syncdb
+manage.py makemigrations
+manage.py migrate

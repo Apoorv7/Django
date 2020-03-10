@@ -1,0 +1,60 @@
+
+
+==============Models.py=====================
+from django.db import models
+from django.template.defaultfilters import slugify 
+from django.contrib.auth.models import User
+
+# Create your models here.
+
+class UserProfile(models.Model):
+      user=models.OneToOneField(User)
+      description=models.CharField(default='', max_length=100)  
+
+class City(models.Model):
+      user=models.OneToOneField(User)
+      name=models.CharField(default='',max_length=100)      
+
+class Post(models.Model):
+    title = models.CharField(max_length=255)
+    slug = models.SlugField(unique=True, max_length=255)
+    content = models.TextField()
+    author = models.TextField()  
+    
+@models.permalink
+def get_absolute_url(self):
+        return ('blog_post_detail', (),
+                {
+                   'slug': self.slug,
+                })
+
+def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.title)
+        super(Post, self).save(*args, **kwargs)
+
+class Meta:
+        ordering = ['created_on']
+
+        def __unicode__(self):
+            return self.title
+=============================admin======================
+
+from django.contrib import admin
+from blog.models import UserProfile
+from blog.models import City
+from blog.models import Post
+
+# Register your models here.
+
+admin.site.register(UserProfile)
+admin.site.register(City)
+admin.site.register(Post)
+
+===================command run ==================
+python manage.py makemigrations
+python manage.py migrate
+
+python manage.py sqlmigrate blogsite 0001_initial
+
+  SignIn\migrations\0001_initial.py

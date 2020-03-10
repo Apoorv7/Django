@@ -1,0 +1,49 @@
+Form
+	action	: route to (function-view)
+	method	: get(will pass data in query string/url), get is default 
+		  or post : is hidden filed 
+
+
+<form action=""  method="get"  >
+
+	<p>
+		Name : <input type.... name="" id="" />
+	</p>
+	
+
+	<input type="submit"  value="signup" />
+</form>
+
+		 
+
+
+===========================
+===========================
+My SQL server should be available / installed
+	host		: localhost 
+	user		: root	
+	password	: root
+	database	: hrms 	
+
+sql commands:
+	show databases;		--show list of existing database
+	create database dbname;	--create new database
+	use dbname;		--change database 
+				--create new table 
+	create table users (uid int auto_increment primary key, name varchar(100), 	email varchar(30), pwd varchar(20));
+
+	desc users;		--show descripton of table 
+				--insert/save data 
+	insert into users(name,email,pwd) values('nitin','nitin@gmail.com','abc');
+				
+	select * from users;		--show/view data 
+					--* : show all columns 
+
+	
+	
+
+
+pip install mysql-connector
+	
+
+

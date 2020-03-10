@@ -1,0 +1,101 @@
+=====================
+DJango Architecture : DJango is MVT(model view template) framework 
+===================== MVC: model view controller  
+Framework: is set of library or standard way to implement/develop the project
+
+
+pip install django-admin
+
+-default path 
+C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python36_64\Scripts
+	django-admin.py
+	django-admin.exe
+
+Comamnds:
+============
+-open  the terminal (cmd,poweshell)
+	ctrl+`
+	or 
+	Go to View menu and click on Terminal / Integrated Terminal 
+-check django version
+python -m django --version
+
+
+--create new project
+django-admin startproject projectname
+
+
+--change directory / go inside project
+cd projectname
+
+
+--build and run on default port : 8000
+manage.py runserver		
+
+python manage.py runserver 8080
+python manage.py runserver 0:8000				
+
+
+--create new app in existing project
+manage.py startapp  appname
+
+
+Editor / IDE :best open source editor 
+===============
+	-VSCOde
+		
+		
+=====================
+Project vs Apps
+=====================
+socialsite
+	socialsite		
+		urls.py	    : aplication routing or view/function routing 	
+		settings.py :configuration (database,path for image,css,javascript)
+		init.py     :startup 
+		wsgi.py	    : 	
+	
+	manage.py		:project manager 
+		
+
+=====================
+URL Routing 	
+=====================
+Project/App Routing
+	socialsite
+		socialsite
+			urls.py
+
+project-urls - app.urls - view.function 
+
+=====================
+Views (Actions, python's function)
+=====================
+
+=====================
+Settings
+=====================
+Add entry of application in settings.py file
+	
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'auth',
+    'chat',
+
+]
+	
+=====================
+Template (html,css) and forms 
+=====================
+-Create new folder "templates" in apps
+-create new folder in tempales with same name which is name of the apps
+	
+	
+
+
+

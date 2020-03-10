@@ -1,0 +1,46 @@
+use testportal;
+
+
+create table Ops(QID int,op1 varchar(20),op2 varchar(20),op3 varchar(20),op4 varchar(20),COP varchar(10));
+
+insert into answer(ques,op1,op2,op3,op4) values("last year","2017","2018","2019","2020");
+
+select * from users;
+create table TestDetails(TDID int,TID int,QID int,Selected_Option int);
+
+
+select * from category;
+select * from users where CONTACT='8800535151' and  pwd='test';
+
+
+create table questions(QID int,CATID int,DESCRIPTION varchar(100),STATUS int);
+
+
+
+insert into questions(QID,CATID,DESCRIPTION,STATUS) values(6,3,"CSS full form?",1);
+
+
+select * from  questions;
+
+
+select category.NAME,questions.DESCRIPTION from category join questions on questions.CATID=category.CATID;
+
+
+
+insert into Ops(QID,op1,op2,op3,op4,COP) values(1,"py","exe","dat","img","op1");
+
+insert into Ops(QID,op1,op2,op3,op4,COP) values(2,"English","Hindi","Programming","None of the above","op3");
+
+insert into Ops(QID,op1,op2,op3,op4,COP) values(3,"tkinter","class","student","None of the above","op1");
+
+insert into Ops(QID,op1,op2,op3,op4,COP) values(4,"Win XP","Linux","Win 10","All of the above","op4");
+
+insert into Ops(QID,op1,op2,op3,op4,COP) values(5,"Software","Hardware","Web Development","None","op3");
+
+insert into Ops(QID,op1,op2,op3,op4,COP) values(6,"Casset","CascadingStyleSheets","Styling","None","op2");
+
+
+select * from ops;
+select * from questions as q inner join ops as o on q.QID = o.QID where q.QID=1; 
+
+delete from questions where qid=3 and catid=1;
