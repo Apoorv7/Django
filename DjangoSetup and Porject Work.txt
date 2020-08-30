@@ -3,8 +3,8 @@ DJango Architecture : DJango is MVT(model view template) framework
 ===================== MVC: model view controller  
 Framework: is set of library or standard way to implement/develop the project
 
-
-pip install django-admin
+After installing python go to python file location and open cmd and enter: 
+pip install django
 
 -default path 
 C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python36_64\Scripts
